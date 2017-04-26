@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>尚硅谷 HTML5</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style type="text/css">
+        /*header*/
+        ul.nav a:hover,ul.nav a:visited,ul.nav a:link,ul.nav a:active {
+            background-color: #FFF;
+            color: #000000;
+        }
+        #head{
+            width: 100%;
+            background-color: #fff;
+            border-bottom: 1px solid #f5f5f5;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif, "宋体";
+            font-size:15.5px;
+        }
+       .wrapper{
+           position: relative;
+           width: 1200px;
+           height: 65px;
+           margin: 0 auto;
+           padding: 0 15px;
+       }
+        .logo-wrapper{
+            position: absolute;
+            width:240px;
+            height:65px;
+            /*text-align: center;*/
+            margin:2.5px 0;
+        }
+        .logo-wrapper a img{
+            width:240px;
+            height:40px;
+            margin-top: 10px;
+        }
+        .nav{
+            float: right;
+            margin-top: 10px;
+        }
+        .nav li{
+            display: inline-block;
+        }
+        .switchCity .showCity{
+            margin-right: 5px;
+            color: #000;
+        }
+        .nav li a:hover {
+            background-color: #FFF;
+            color: red;
+            transition: color .1s linear;
+        }
+        a,span{
+            /*color:#000000;*/
+            font-weight: bold;
+        }
+        .switchCity{
+            margin-right: 50px;
+        }
+
+        .active{
+            color: red !important;
+        }
+        .shanghu{
+            margin: 0 10px;
+            border-radius: 5px;
+            background: #e94840 !important;
+            color: #fff !important;
+            padding: 4px 6px !important;
+        }
+/*轮播图*/
+        .container{
+            position: relative;
+            width:100%;
+            padding: 0;
+            background-color: rgba(39, 39, 0, 0.04);
+            padding-bottom: 20px;
+        }
+        .full-banner{
+            width:100%;
+            position: relative;
+        }
+        .position{
+            position: relative;
+            width: 100%;
+            height:420px;
+        }
+        .position li:first-child{
+            position: absolute;
+            height:100%;
+            width: 100%;
+            background:url("./src/banner1.jpg") center no-repeat;
+            left: 0px;
+            top: 0px;
+        }
+        .sec{
+            position: absolute;
+            height:100%;
+            width: 100%;
+            background:url("./src/banner2.jpg") center no-repeat;
+            left: 0px;
+            top: 0px;
+        }
+        .position li:last-child{
+            position: absolute;
+            height:100%;
+            width: 100%;
+            background:url("./src/banner3.jpg") center no-repeat;
+            left: 0px;
+            top: 0px;
+        }
+        .round{
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+            bottom: 0;
+            left:0;
+            height:30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        .round li{
+            display: inline-block;
+            width:10px;
+            height:10px;
+            margin:5px;
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 100%;
+        }
+        .round .on{
+            background-color: rgba(255,255,255,1);
+        }
+
+/*导航条*/
+        .banner-nav{
+            width: 360px;
+            height: 420px;
+            position: absolute;
+            left: 150px;
+            top:0;
+            z-index: 1;
+            /*border: 1px solid red;*/
+        }
+        .nav-ul{
+            width:50%;
+            background: #757881;
+            position: relative;
+        }
+
+        .nav-ul>li:hover{
+            background-color: #575757;
+        }
+        .nav-ul li a{
+            height: 42px;
+            line-height: 42px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            padding-left: 45px;
+            text-decoration: none
+        }
+        .nav-ul li img{
+            margin-left: 20px;
+        }
+        .nav-ul li .icon1{
+            position: absolute;
+            right: 0;
+            top:0;
+            bottom: 0;
+            margin: auto;
+            opacity:0;
+        }
+        .nav-ul-right{
+            position: absolute;
+            top:0;
+            left:178px;
+            width: 180px;
+            height: 420px;
+            background-color: #fff;
+            display: none;
+        }
+        .nav-ul-right li a{
+            color: #000000;;
+        }
+        .nav-ul-right li a:hover{
+            color: red;
+            line-height: 42px;
+        }
+
+        /*box1*/
+        .box1{
+            height: 560px;
+            width: 100%;
+        }
+        .box1 .box1-container{
+            width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0;
+            /*clear: both;*/
+        }
+        .box1 div a{
+            text-decoration: none
+        }
+        .navigation{
+            text-align: center;
+        }
+        .serviceIndex {
+            color: #3d3838;
+            font-weight: 800;
+            font-size: 28px;
+            font-family: "Microsoft YaHei";
+        }
+        .serviceType{
+            font-size: 22px;
+            color: #3d3838;
+            margin-top: 15px;
+        }
+        .navigation span {
+            display: block;
+        }
+        .tagsListHeader{
+            text-align: right;
+        }
+        .row{
+            margin:10px 0 0 0;
+        }
+        .ServiceBorder {
+            float: left;
+            padding: 10px;
+            width: 230px;
+            border: 1px solid #eaeaea;
+            margin: 0 5px;
+            background: #fff;
+            height: 345px;
+        }
+        .serviceName {
+            font-size: 16px;
+            padding: 10px 0;
+            font-weight: 800;
+            color: #000;
+            height: 28px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .shopList .description {
+            color: #929292;
+            padding: 5px 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /*white-space: nowrap;*/
+             /*-webkit-line-clamp: 2;*/
+             /*-webkit-box-orient: vertical;*/
+             word-break: break-all;
+            font-size: 13px;
+            line-height: 18px;
+            height: 58px;
+        }
+        .price {
+            font-size: 14px;
+            padding: 5px 5px;
+            font-weight: 600;
+            height: 20px;
+            line-height: 20px;
+            color: #fb474f;
+        }
+        .btn {
+            float: right;
+            padding: 0;
+            width: 76px;
+            height: 24px;
+            line-height: 22px;
+            text-align: center;
+            background: #fb474f;
+            border-radius: 5px;
+            color: #fff !important;
+            font-size: 14px;
+        }
+        .ServiceBorder:hover{
+            -webkit-box-shadow: 3px 3px 15px rgba(29, 10, 10, 0.4);;
+            -moz-box-shadow: 3px 3px 15px rgba(29, 10, 10, 0.4);
+            box-shadow: 3px 3px 15px rgba(29, 10, 10, 0.4);
+        }
+        .baozhang {
+            text-align: center;
+            width: 100%;
+            padding-top: 60px;
+            background: #fff;
+        }
+        #baozhang h2 {
+            font-size: 28px;
+            font-family: "微软雅黑";
+            font-weight: 800;
+        }
+        #baozhang p {
+            font-size: 20px;
+            color: #3d3838;
+            margin: 0;
+        }
+        .servi {
+            width: 100%;
+            padding-top: 68px;
+            background: #fff;
+            height: 150px;
+            font-family: "微软雅黑";
+        }
+        .servi ul {
+            width: 850px;
+            margin: 0 auto;
+        }
+        .servi ul li {
+            width: 33%;
+            float: left;
+            text-align: center;
+            color: #1d1515;
+            font-size: 18px;
+        }
+  /*footer*/
+        .footer {
+            width: 100%;
+            padding-top: 50px;
+            height: 160px;
+            background: #fff;
+        }
+        .footer dl {
+            width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .footer dl dt {
+            float: left;
+            font-family: " 微软雅黑";
+        }
+        .footer dl dd {
+            margin-left: 40px;
+            width: 1100px;
+            line-height: 30px;
+            float: left;
+        }
+        .footer dl dd span {
+            font-size: 16px;
+            color: #898989;
+            display: inline-block;
+            width: 9%;
+            text-align: center;
+            font-weight: 200;
+            cursor: pointer;
+            font-family: "微软雅黑";
+        }
+        .beian {
+            width: 100%;
+            height: 130px;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .beian p {
+            color: #898989;
+        }
+    </style>
+</head>
+<body>
+<div id="head-container">
+    <header id="head">
+        <div class="wrapper">
+            <div class="logo-wrapper">
+                <a href="javascript:;">
+                    <img src="./src/logo.png" alt="logo">
+                </a>
+            </div>
+            <ul class="nav">
+                <li class="switchCity">
+                    <a href="javascript:;">
+                        <img src="./src/citypoint.png" alt="city">
+                        <span class="showCity">北京</span>
+                        <span  id="city">切换城市</span>
+                    </a>
+                </li>
+                <li  >
+                    <a href="javascript:;" class="active">首页</a>
+                </li>
+                <li>
+                    <a href="javascript:;">下载APP</a>
+                </li>
+                <li>
+                    <a href="javascript:;">服务商</a>
+                </li>
+                <li>
+                    <a href="javascript:;">商家入驻</a>
+                </li>
+                <li>
+                    <a href="javascript:;">关于我们</a>
+                </li>
+                <li class="shanghu-right">
+                    <a href="javascript:;" class="shanghu">商家登录</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div class="container-head">
+            <div class="full-banner">
+                <ul class="position">
+                    <li></li>
+                    <li class="sec"></li>
+                    <li></li>
+                </ul>
+                <ul class="round">
+                    <li class="on"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="banner-nav">
+                <ul class="nav-ul">
+                    <li><a href="javascript:;">家庭保洁</a>
+                        <img src="./src/right.png">
+                        <img src="./src/icon1.png" class="icon1">
+                        <ul class="nav-ul-right">
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">上门按摩
+                        <img src="./src/right.png">
+                        <img src="./src/icon1.png" class="icon1">
+                        <ul class="nav-ul-right">
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                        </ul>
+                    </a></li>
+                    <li><a href="javascript:;">上门维修</a>
+                        <img src="./src/right.png">
+                        <img src="./src/icon1.png" class="icon1">
+                        <ul class="nav-ul-right">
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">家电清洗</a>
+                        <img src="./src/right.png">
+                        <img src="./src/icon1.png" class="icon1">
+                        <ul class="nav-ul-right">
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">衣物洗护</a>
+                        <img src="./src/right.png">
+                        <img src="./src/icon1.png" class="icon1">
+                        <ul class="nav-ul-right">
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">美妆美容</a>
+                        <img src="./src/right.png">
+                        <img src="./src/icon1.png" class="icon1">
+                        <ul class="nav-ul-right">
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">上门医护</a>
+                        <img src="./src/right.png">
+                        <img src="./src/icon1.png" class="icon1">
+                        <ul class="nav-ul-right">
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">搬家速运</a>
+                        <img src="./src/right.png">
+                        <img src="./src/icon1.png" class="icon1">
+                        <ul class="nav-ul-right">
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">养车用车</a>
+                        <img src="./src/right.png">
+                        <img src="./src/icon1.png" class="icon1">
+                        <ul class="nav-ul-right">
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">保姆月嫂</a>
+                        <img src="./src/right.png">
+                        <img src="./src/icon1.png" class="icon1">
+                        <ul class="nav-ul-right">
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                            <li><a href="javascript:;">小时工</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="box1-container">
+                <div class="navigation">
+                    <span class="serviceIndex">家庭保洁</span>
+                    <span class="serviceType">小时工/开荒保洁/擦玻璃/深度保洁/家居养护/空气净化/杀虫灭鼠</span>
+                    </div>
+                <div class="servicetags">
+                    <div class="tagsListHeader">
+                        <span class="lookMore">
+                            <a href='javascript:;' style="color: #898989; font-size: 18px">更多服务&gt;</a></span>
+                    </div>
+                    <div class="row">
+                        <a class="shopList" href="javascript:;">
+                            <div class="ServiceBorder">
+                                <img src="./src/f8f9e320-6584-4ddf-a5ce-208611170480.jpg" width="210px" height="210px">
+                                <div class="serviceName">家庭保洁</div>
+                                <div class="description">服务内容：
+                                    家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</div>
+                                <div class="price">
+                                    <span style="font-size: 20px; color: red">30</span>元/小时
+                                    <span class="btn">查看详情</span></div>
+                            </div>
+                        </a>
+                        <a class="shopList" href="javascript:;">
+                            <div class="ServiceBorder">
+                                <img src="./src/f8f9e320-6584-4ddf-a5ce-208611170480.jpg" width="210px" height="210px">
+                                <div class="serviceName">家庭保洁</div>
+                                <div class="description">服务内容：
+                                    家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</div>
+                                <div class="price">
+                                    <span style="font-size: 20px; color: red">30</span>元/小时
+                                    <span class="btn">查看详情</span></div>
+                            </div>
+                        </a>
+                        <a class="shopList" href="javascript:;">
+                            <div class="ServiceBorder">
+                                <img src="./src/f8f9e320-6584-4ddf-a5ce-208611170480.jpg" width="210px" height="210px">
+                                <div class="serviceName">家庭保洁</div>
+                                <div class="description">服务内容：
+                                    家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</div>
+                                <div class="price">
+                                    <span style="font-size: 20px; color: red">30</span>元/小时
+                                    <span class="btn">查看详情</span></div>
+                            </div>
+                        </a>
+                        <a class="shopList" href="javascript:;">
+                            <div class="ServiceBorder">
+                                <img src="./src/f8f9e320-6584-4ddf-a5ce-208611170480.jpg" width="210px" height="210px">
+                                <div class="serviceName">家庭保洁</div>
+                                <div class="description">服务内容：
+                                    家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</div>
+                                <div class="price">
+                                    <span style="font-size: 20px; color: red">30</span>元/小时
+                                    <span class="btn">查看详情</span></div>
+                            </div>
+                        </a>
+                        <a class="shopList" href="javascript:;">
+                            <div class="ServiceBorder">
+                                <img src="./src/f8f9e320-6584-4ddf-a5ce-208611170480.jpg" width="210px" height="210px">
+                                <div class="serviceName">家庭保洁</div>
+                                <div class="description">服务内容：
+                                    家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</div>
+                                <div class="price">
+                                    <span style="font-size: 20px; color: red">30</span>元/小时
+                                    <span class="btn">查看详情</span></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="box1-container">
+                <div class="navigation">
+                    <span class="serviceIndex">家庭保洁</span>
+                    <span class="serviceType">小时工/开荒保洁/擦玻璃/深度保洁/家居养护/空气净化/杀虫灭鼠</span>
+                </div>
+                <div class="servicetags">
+                    <div class="tagsListHeader">
+                        <span class="lookMore">
+                            <a href='javascript:;' style="color: #898989; font-size: 18px">更多服务&gt;</a></span>
+                    </div>
+                    <div class="row">
+                        <a class="shopList" href="javascript:;">
+                            <div class="ServiceBorder">
+                                <img src="./src/f8f9e320-6584-4ddf-a5ce-208611170480.jpg" width="210px" height="210px">
+                                <div class="serviceName">家庭保洁</div>
+                                <div class="description">服务内容：
+                                    家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</div>
+                                <div class="price">
+                                    <span style="font-size: 20px; color: red">30</span>元/小时
+                                    <span class="btn">查看详情</span></div>
+                            </div>
+                        </a>
+                        <a class="shopList" href="javascript:;">
+                            <div class="ServiceBorder">
+                                <img src="./src/f8f9e320-6584-4ddf-a5ce-208611170480.jpg" width="210px" height="210px">
+                                <div class="serviceName">家庭保洁</div>
+                                <div class="description">服务内容：
+                                    家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</div>
+                                <div class="price">
+                                    <span style="font-size: 20px; color: red">30</span>元/小时
+                                    <span class="btn">查看详情</span></div>
+                            </div>
+                        </a>
+                        <a class="shopList" href="javascript:;">
+                            <div class="ServiceBorder">
+                                <img src="./src/f8f9e320-6584-4ddf-a5ce-208611170480.jpg" width="210px" height="210px">
+                                <div class="serviceName">家庭保洁</div>
+                                <div class="description">服务内容：
+                                    家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</div>
+                                <div class="price">
+                                    <span style="font-size: 20px; color: red">30</span>元/小时
+                                    <span class="btn">查看详情</span></div>
+                            </div>
+                        </a>
+                        <a class="shopList" href="javascript:;">
+                            <div class="ServiceBorder">
+                                <img src="./src/f8f9e320-6584-4ddf-a5ce-208611170480.jpg" width="210px" height="210px">
+                                <div class="serviceName">家庭保洁</div>
+                                <div class="description">服务内容：
+                                    家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</div>
+                                <div class="price">
+                                    <span style="font-size: 20px; color: red">30</span>元/小时
+                                    <span class="btn">查看详情</span></div>
+                            </div>
+                        </a>
+                        <a class="shopList" href="javascript:;">
+                            <div class="ServiceBorder">
+                                <img src="./src/f8f9e320-6584-4ddf-a5ce-208611170480.jpg" width="210px" height="210px">
+                                <div class="serviceName">家庭保洁</div>
+                                <div class="description">服务内容：
+                                    家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</div>
+                                <div class="price">
+                                    <span style="font-size: 20px; color: red">30</span>元/小时
+                                    <span class="btn">查看详情</span></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="box1-container">
+                <div class="navigation">
+                    <span class="serviceIndex">家庭保洁</span>
+                    <span class="serviceType">小时工/开荒保洁/擦玻璃/深度保洁/家居养护/空气净化/杀虫灭鼠</span>
+                </div>
+                <div class="servicetags">
+                    <div class="tagsListHeader">
+                        <span class="lookMore">
+                            <a href='javascript:;' style="color: #898989; font-size: 18px">更多服务&gt;</a></span>
+                    </div>
+                    <div class="row">
+                        <a class="shopList" href="javascript:;">
+                            <div class="ServiceBorder">
+                                <img src="./src/f8f9e320-6584-4ddf-a5ce-208611170480.jpg" width="210px" height="210px">
+                                <div class="serviceName">家庭保洁</div>
+                                <div class="description">服务内容：
+                                    家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</div>
+                                <div class="price">
+                                    <span style="font-size: 20px; color: red">30</span>元/小时
+                                    <span class="btn">查看详情</span></div>
+                            </div>
+                        </a>
+                        <a class="shopList" href="javascript:;">
+                            <div class="ServiceBorder">
+                                <img src="./src/f8f9e320-6584-4ddf-a5ce-208611170480.jpg" width="210px" height="210px">
+                                <div class="serviceName">家庭保洁</div>
+                                <div class="description">服务内容：
+                                    家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</div>
+                                <div class="price">
+                                    <span style="font-size: 20px; color: red">30</span>元/小时
+                                    <span class="btn">查看详情</span></div>
+                            </div>
+                        </a>
+                        <a class="shopList" href="javascript:;">
+                            <div class="ServiceBorder">
+                                <img src="./src/f8f9e320-6584-4ddf-a5ce-208611170480.jpg" width="210px" height="210px">
+                                <div class="serviceName">家庭保洁</div>
+                                <div class="description">服务内容：
+                                    家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</div>
+                                <div class="price">
+                                    <span style="font-size: 20px; color: red">30</span>元/小时
+                                    <span class="btn">查看详情</span></div>
+                            </div>
+                        </a>
+                        <a class="shopList" href="javascript:;">
+                            <div class="ServiceBorder">
+                                <img src="./src/f8f9e320-6584-4ddf-a5ce-208611170480.jpg" width="210px" height="210px">
+                                <div class="serviceName">家庭保洁</div>
+                                <div class="description">服务内容：
+                                    家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</div>
+                                <div class="price">
+                                    <span style="font-size: 20px; color: red">30</span>元/小时
+                                    <span class="btn">查看详情</span></div>
+                            </div>
+                        </a>
+                        <a class="shopList" href="javascript:;">
+                            <div class="ServiceBorder">
+                                <img src="./src/f8f9e320-6584-4ddf-a5ce-208611170480.jpg" width="210px" height="210px">
+                                <div class="serviceName">家庭保洁</div>
+                                <div class="description">服务内容：
+                                    家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</div>
+                                <div class="price">
+                                    <span style="font-size: 20px; color: red">30</span>元/小时
+                                    <span class="btn">查看详情</span></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="baozhang" id="baozhang"><h2>到位<span style="color: red;">服务</span>保障</h2><p>到位平台担保交易安全，交易未成功100%退款</p></div>
+            <div class="servi">
+                <ul>
+                    <li><img src="src/quan.png" width="44" height="44"><br>服务多</li>
+                    <li><img src="src/quan.png" width="44" height="44"><br>上门快</li>
+                    <li><img src="src/quan.png" width="44" height="44"><br>有保障</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <dl>
+            <dt>热门城市</dt>
+            <dd>
+                <span>北京</span><span>上海</span><span>广州</span><span>深圳</span><span>成都</span><span>天津</span><span>南京</span><span>杭州</span><span>重庆</span><span>苏州</span><span>武汉</span><span>长沙</span><span>济南</span><span>郑州</span><span>西安</span><span>沈阳</span><span>福州</span><span>厦门</span><span>南昌</span><span>合肥</span><span>宁波</span><span>无锡</span><span>青岛</span><span>大连</span><span>东莞</span><span>佛山</span><span>石家庄</span><span>哈尔滨</span><span>太原</span><span>昆明</span><span>贵阳</span><span>南宁</span><span>温州</span>
+            </dd>
+        </dl>
+        <div class="beian">
+            <p>©2015 版权所有  到位 daoway.com 京ICP备15001471号-1</p>
+            <p>北京邻家科技有限公司  </p>
+        </div>
+    </footer>
+</div>
+
+
+
+</body>
+</html>
